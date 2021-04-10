@@ -1,0 +1,78 @@
+<!DOCTYPE HTML> 
+<html> 
+  
+<head> 
+    <script src= 
+"//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"> 
+    </script> 
+  
+    <script> 
+        var myApp = angular.module("app", []); 
+        myApp.controller("controller", function ($scope) { 
+            $scope.arr = ['GFG', 'GeeksForGeeks']; 
+            $scope.push = function () { 
+                // get the input value 
+                var inputVal = $scope.arrInput; 
+                $scope.arr.push(inputVal); 
+  
+            }; 
+        }); 
+
+   
+
+
+function random_array(){
+  var lstnums = [];
+  for (var i = 0; i < 100; i++) {
+      var rnd = Math.floor(Math.random() * 10);
+      lstnums.push(rnd);
+  }
+  return lstnums;
+}
+
+
+function onclick(lstnum,num){
+  var count = 0;
+  for (var i = 0; i < lstnum.length; i++) {
+      if(lstnum[i] == num){
+          count +=1;
+      }
+  }
+  return count;
+}
+
+
+var random_number = Math.floor(Math.random() * 10);
+var arr = random_array();
+console.log("There is " + onclick(arr,random_number) + " of number " + random_number + " in array " + arr);
+
+
+
+    </script> 
+</head> 
+  
+<body style="text-align:center;"> 
+    <h1 style="color:green;"> 
+        GeeksForGeeks 
+    </h1> 
+    <p> 
+        How to push element in  
+        array in AngularJS 
+    </p> 
+    <div ng-app="app"> 
+        <div ng-controller="controller"> 
+            Input here: 
+            <input type="text" 
+                name="arrExample" 
+                ng-model="arrInput"> 
+                  
+            <br><br> 
+            Array = {{arr}}<br><br> 
+            <button ng-click='push()'> 
+                Click to push 
+            </button> 
+        </div> 
+    </div> 
+</body> 
+  
+</html> 

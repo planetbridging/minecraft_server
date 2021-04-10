@@ -1,0 +1,39 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: #005274;
+  height: 100%;
+  width: 100%;
+  /*background-image: url("/web/imgs/hex.png");*/
+}
+
+.heximgs {
+  width: 60px;
+}
+
+#ChatHolder {
+  padding: 20px;
+}
+
+#Chat {
+  position: absolute;
+  height: 90%;
+  width: calc(100% - 30px);
+  overflow-y: auto;
+}
+
+#ShowCase {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+}
+
+#Header {
+  width: 800px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}

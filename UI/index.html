@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blockedup</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="css/bootstrap.css" rel="stylesheet"  >
+        <script src="js/jquery-3.6.0.js"></script>
+		<script src="js/bootstrap.min.js" ></script>
+        <script src="js/angular.js"></script>
+		<link href="css/master.css" rel="stylesheet">
+        <script src="js/color_array.js"></script>
+        <script src="js/animals_array.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+		<script src="js/master.js"></script>
+
+	</head>
+    <body>
+
+
+        <nav id="FixedMenu" class="navbar navbar-expand-md  navbar-dark bg-dark shadow-sm" role="tablist">
+            <a class="navbar-brand" href="/">Blockedup</a>
+            <div id="ToggleMenu">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
+              <ul class="navbar-nav mr-auto ">
+                <a class="nav-link" target="_blank" href="http://pressback.space" >
+                  Portfolio
+                </a>
+              <li class="nav-item dropdown">
+              <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Social
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item bg-dark text-light" href="#w1task1">Facebook</a>  
+                <a class="dropdown-item bg-dark text-light" href="#w1task2">Telegram</a>  
+                <a class="dropdown-item bg-dark text-light" href="#w1task3">Discord</a>          
+              </div>-->
+            </li>
+
+          </ul>
+      
+            </div>
+            </div>
+      </nav>
+
+        <div class="p-3 w-100 h-75">
+            
+          <h3 class="text-light text-center">Welcome</h3>
+          <div id="Header"><img src="imgs/blockedup.png" alt="Blockedup"/></div>
+          <p class="text-light text-center">Created by Shannon Setter</p>
+          <p class="text-light text-center">Hi everyone, in celebration of finishing my uni degree soon I've decided to host a minecraft server</p>
+          <p class="text-light text-center"><a id="ShowLink" href="http://mc.servebeer.com:8123" target="_blank"><span id="ShowPath">Dynmap mc.servebeer.com:8123</span></a></p>
+          <iframe id="ShowCase" src="http://mc.servebeer.com:8123"></iframe>
+          
+
+        </div>
+
+        
+
+        <div id="ChatHolder" class="fixed-bottom bg-dark p-2 w-100">
+
+
+          <div ng-app="mainApp"> 
+           
+
+            <div ng-controller="SomeController">
+             
+            </div>
+
+            
+        
+
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <button id="ChatToggle" type="button" class="btn btn-dark">
+                        Chat <span id="unique_users" class="badge badge-primary">0</span>
+                    </button>
+                </li>
+                <li class="nav-item"><input id="UserName"  type="text" width="48" placeholder="Name" disabled></li>
+                <li class="nav-item"></li><div ng-controller="AnotherController">
+                  <p class="text-light">{{valueService.value}}</p>
+                </div></li>
+              </ul>
+            
+           
+            <div id="Chat" class="d-none p-3">
+              <div ng-controller="MsgController"> 
+                <ul class="list-group" ng-repeat="msg in tags">
+                        <li class="list-group-item disabled"> 
+                            <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{msg.name}}</h5>
+                            <small>{{msg.time}}</small>
+                          </div>
+                          <p class="mb-1">{{msg.msg}}</p>
+                        </li>
+                    </ul>
+            </div>
+                <div id="SendChat" class="fixed-bottom bg-dark p-2 w-100">
+                    <div class="input-group mb-3">
+                    <input id="TxtMsg" type="text" class="form-control" placeholder="send a message">
+                    <div class="input-group-append">
+                      <button id="BtnMsg"  class="btn btn-outline-secondary" type="button">Send</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div> 
+    </body>
+</html>
