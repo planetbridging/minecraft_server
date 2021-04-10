@@ -37,7 +37,6 @@ io.on("connection", (socket) => {
   });
 });
 
-/*
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header(
@@ -45,7 +44,7 @@ app.use(function (req, res, next) {
     "Origin, X-Requested-With, Content-Type, Accept,authtoken"
   );
   next();
-});*/
+});
 
 console.log(`running at http://localhost:${port}/`);
 var server = http.listen(port);
